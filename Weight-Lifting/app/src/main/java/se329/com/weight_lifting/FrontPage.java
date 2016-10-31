@@ -14,7 +14,7 @@ public class FrontPage extends AppCompatActivity {
     }
 
     public void buildWorkout(View view){
-        Intent intent = new Intent(this, buildWorkoutActivity.class);
+        Intent intent = new Intent(this, buildWorkout.class);
         startActivity(intent);
 
     }

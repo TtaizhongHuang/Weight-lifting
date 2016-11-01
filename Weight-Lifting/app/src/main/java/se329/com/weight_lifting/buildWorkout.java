@@ -1,12 +1,14 @@
 package se329.com.weight_lifting;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class buildWorkout extends AppCompatActivity {
-
+    public final static String EXTRA_MESSAGE = "com.SE329.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +22,13 @@ public class buildWorkout extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, mGroups);
         dropdown.setAdapter(adapter2);
 
+    }
+
+    public void generateWork(View view){
+        Intent intent = new Intent(this, genWorkout.class);
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        String message = spinner.getSelectedItem().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }

@@ -14,7 +14,7 @@ public class buildWorkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_workout);
         Spinner dropdown = (Spinner)findViewById(R.id.spinner1);
-        String[] items = new String[]{"Free Weights", "Machines", "Natural"};
+        String[] items = new String[]{"Basic", "Commercial", "Health Club"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
         dropdown = (Spinner) findViewById(R.id.spinner2);
@@ -28,6 +28,8 @@ public class buildWorkout extends AppCompatActivity {
         Intent intent = new Intent(this, genWorkout.class);
         final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
         String message = spinner.getSelectedItem().toString();
+        final Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+        message += spinner2.getSelectedItem().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }

@@ -1,12 +1,14 @@
 package se329.com.weight_lifting;
 
+import java.util.Random;
+
 /**
  * Created by valbi_000 on 11/2/2016.
  */
 public class geneWork {
     private String gymType;
     private String muscleGroup;
-    private workout[] workOuts = new workout[11];
+    private workout[] workOuts = new workout[12];
     geneWork(String gymType, String muscleGroup){
         this.gymType = gymType;
         this.muscleGroup = muscleGroup;
@@ -15,9 +17,28 @@ public class geneWork {
     workout[] party = new workout[5];
 
     void generate(){
-        for(int i = 0; i < 5; i++) {
-            party[i] = workOuts[i];
-        }
+
+            Random rand = new Random();
+            int randomNum = rand.nextInt(4);
+            party[4] = workOuts[randomNum];
+            randomNum = rand.nextInt(11);
+            while(workOuts[randomNum].getType() != "tricep"){
+                randomNum = rand.nextInt(11);
+            }
+        party[1] = workOuts[randomNum];
+            while(workOuts[randomNum].getType() != "tricep"){
+                randomNum = rand.nextInt(11);
+            }
+        party[2] = workOuts[randomNum];
+            while(workOuts[randomNum].getType() != "Chest"){
+                randomNum = rand.nextInt(11);
+            }
+        party[3] = workOuts[randomNum];
+            while(workOuts[randomNum].getType() != "Chest"){
+                randomNum = rand.nextInt(11);
+            }
+        party[0] = workOuts[randomNum];
+
     }
 
     void fillwork(){
@@ -29,7 +50,7 @@ public class geneWork {
         workOuts[5] = new workout("Chest", "Push Ups");
         workOuts[6] = new workout("Chest", "Around the Worlds");
         workOuts[7] = new workout("Chest", "Dumbbell Incline Bench Press");
-        workOuts[8] = new workout("tricpe", "Decline Dumbbell Tricep Extension");
+        workOuts[8] = new workout("tricep", "Decline Dumbbell Tricep Extension");
         workOuts[9] = new workout("tricep", "Close Grip Ez Bar");
         workOuts[10] = new workout("tricep", "Body Up");
         workOuts[11] = new workout("tricep", "Bench Dips");
@@ -42,6 +63,10 @@ public class geneWork {
         workout(String type, String name){
             this.type = type;
             this.name = name;
+        }
+
+        public String getType(){
+            return this.type;
         }
 
         public String toString(){

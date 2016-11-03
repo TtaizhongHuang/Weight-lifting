@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.io.Console;
 
 public class genWorkout extends AppCompatActivity {
 
@@ -15,10 +18,15 @@ public class genWorkout extends AppCompatActivity {
         setContentView(R.layout.activity_gen_workout);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(buildWorkout.EXTRA_MESSAGE);
+        String club = intent.getStringExtra(buildWorkout.CLUB_MESSAGE);
+        String mGroup = intent.getStringExtra(buildWorkout.MGROUP_MESSAGE);
+        geneWork wOut = new geneWork(club, mGroup);
+        wOut.generate();
+        wOut.party[0].toString();
         TextView textView = new TextView(this);
         textView.setTextSize(30);
-        textView.setText(message);
+        Log.e("Club = ", club);
+        textView.setText(club);
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
         layout.addView(textView);

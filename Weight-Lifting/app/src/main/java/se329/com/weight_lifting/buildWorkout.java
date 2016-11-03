@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class buildWorkout extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "com.SE329.MESSAGE";
+    public final static String CLUB_MESSAGE = "com.SE329.CLUB";
+    public final static String MGROUP_MESSAGE = "com.SE329.MGROUP";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +28,12 @@ public class buildWorkout extends AppCompatActivity {
     public void generateWork(View view){
         Intent intent = new Intent(this, genWorkout.class);
         final Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-        String message = spinner.getSelectedItem().toString();
+        String club = spinner.getSelectedItem().toString();
         final Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-        message += spinner2.getSelectedItem().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        String mGroup = spinner2.getSelectedItem().toString();
+        intent.putExtra(CLUB_MESSAGE, club);
+
+        intent.putExtra(MGROUP_MESSAGE, mGroup);
         startActivity(intent);
     }
 }

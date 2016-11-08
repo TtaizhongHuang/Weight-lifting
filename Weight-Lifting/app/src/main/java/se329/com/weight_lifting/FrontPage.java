@@ -18,4 +18,8 @@ public class FrontPage extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void buildBodyFatP(View view){
+        Intent intent = new Intent(this, buildBodyFatP.class);
+        startActivity(intent);
+    }
 }

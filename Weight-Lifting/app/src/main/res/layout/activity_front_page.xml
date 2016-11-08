@@ -22,13 +22,19 @@
         android:text="Saved Workouts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <Button
+    <!--<Button
         android:text="Friends"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" />-->
     <Button
         android:text="Pre-Built Workouts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+android:text="Calculate Body-Fat-Percentage"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+        android:onClick="buildBodyFatP (FrontPage)" />
 
 </LinearLayout>

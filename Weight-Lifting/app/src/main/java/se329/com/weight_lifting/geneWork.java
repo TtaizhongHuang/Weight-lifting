@@ -1,11 +1,26 @@
 package se329.com.weight_lifting;
 
+
+import android.app.Activity;
+import android.content.Context;
+import android.util.Log;
+
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
 import java.util.Random;
 
 /**
  * Created by valbi_000 on 11/2/2016.
  */
-public class geneWork {
+public class geneWork extends Activity {
     private String gymType;
     private String muscleGroup;
     private workout[] workOuts = new workout[12];
@@ -17,6 +32,7 @@ public class geneWork {
     workout[] party = new workout[5];
 
     void generate(){
+
 
             Random rand = new Random();
             int randomNum = rand.nextInt(4);
@@ -56,6 +72,7 @@ public class geneWork {
         workOuts[11] = new workout("tricep", "Bench Dips");
 
     }
+
 
     class workout{
         private String name;

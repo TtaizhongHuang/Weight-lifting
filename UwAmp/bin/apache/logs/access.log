@@ -1217,3 +1217,11 @@
 ::1 - - [01/Dec/2016:14:05:49 -0600] "GET /319Lab6/testjs.html HTTP/1.1" 200 450
 ::1 - - [01/Dec/2016:14:05:49 -0600] "GET /319Lab6/testjs.html HTTP/1.1" 304 -
 ::1 - - [01/Dec/2016:14:05:50 -0600] "GET /319Lab6/testConnection.php HTTP/1.1" 200 1640
+::1 - - [05/Dec/2016:11:02:27 -0600] "GET / HTTP/1.1" 200 1717
+::1 - - [05/Dec/2016:11:02:29 -0600] "GET /?getimg=title HTTP/1.1" 200 6119
+::1 - - [05/Dec/2016:11:02:29 -0600] "GET /?getimg=folder HTTP/1.1" 200 537
+::1 - - [05/Dec/2016:11:02:50 -0600] "GET /workoutFold HTTP/1.1" 301 344
+::1 - - [05/Dec/2016:11:02:50 -0600] "GET /workoutFold/ HTTP/1.1" 200 999
+::1 - - [05/Dec/2016:11:02:50 -0600] "GET /icons/back.gif HTTP/1.1" 200 216
+::1 - - [05/Dec/2016:11:02:50 -0600] "GET /icons/blank.gif HTTP/1.1" 200 148
+::1 - - [05/Dec/2016:11:02:50 -0600] "GET /icons/unknown.gif HTTP/1.1" 200 245

@@ -18,5 +18,5 @@
         <activity android:name=".buildWorkout" />
         <activity android:name=".genWorkout"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
